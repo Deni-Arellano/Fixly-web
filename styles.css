@@ -198,6 +198,11 @@ button {
   opacity: 0;
 }
 
+.hero-logo-image {
+  width: min(310px, 85vw);
+  height: auto;
+}
+
 .phone {
   width: min(310px, 85vw);
   background: var(--blanco);
