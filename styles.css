@@ -446,11 +446,29 @@ button {
 }
 
 .app-shot {
-  height: 280px;
+  height: 600px;
   border-radius: 18px;
   background: linear-gradient(180deg, var(--blanco), var(--azul-claro-fixly));
   border: 1px solid var(--azul-claro-fixly);
   box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+  background-size: cover;
+  background-position: center;
+}
+
+.app-shot:nth-child(1) {
+  background-image: url(Logib.jpeg);
+}
+
+.app-shot:nth-child(2) {
+  background-image: url(registro_cliente.jpeg);
+}
+
+.app-shot:nth-child(3) {
+  background-image: url(inicio.jpeg);
+}
+
+.app-shot:nth-child(4) {
+  background-image: url(solicitar.jpeg);
 }
 
 .video {
