@@ -22,9 +22,8 @@
         <a href="#beneficios">Beneficios</a>
         <a href="#app">App</a>
         <a href="#resenas">Reseñas</a>
-        <a href="#contacto">Contacto</a>
       </nav>
-      <button class="cta">Descargar App</button>
+      <button class="cta btn-descargar">Descargar App</button>
     </div>
   </header>
 
@@ -39,8 +38,8 @@
             en el hogar de forma rápida, segura y sencilla.
           </p>
           <div class="hero-actions">
-            <button class="cta">Descargar App</button>
-            <button class="ghost">Ver demo</button>
+            <button class="cta btn-descargar">Descargar App</button>
+            <button class="ghost btn-ver-demo">Ver demo</button>
           </div>
           <div class="hero-badges">
             <span class="badge">Técnicos verificados</span>
@@ -142,7 +141,7 @@
         <div>
           <h3>Conoce cómo funciona Fixly</h3>
           <p>Mira nuestro video y descubre cómo hacemos más fácil encontrar técnicos confiables para tu hogar.</p>
-          <button class="cta">Ver video</button>
+          <button class="cta btn-ver-demo">Ver video</button>
         </div>
         <div class="video-player">
           <video controls style="width: 100%; height: 100%; border-radius: 18px;">
@@ -223,6 +222,21 @@
     </section>
   </main>
 
+  <!-- Modal -->
+  <div id="appModal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="modal-body">
+        <h2>Próximamente</h2>
+        <p>En desarrollo</p>
+        <div class="modal-status">
+          <div class="status-icon">⏳</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -247,5 +261,38 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Modal functionality
+    const appModal = document.getElementById('appModal');
+    const closeModal = document.getElementById('closeModal');
+    const descargarBtns = document.querySelectorAll('.btn-descargar');
+    const demoBtns = document.querySelectorAll('.btn-ver-demo');
+
+    // Abrir modal al hacer clic en botones de descargar
+    descargarBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        appModal.classList.add('active');
+      });
+    });
+
+    // Cerrar modal
+    function closeAppModal() {
+      appModal.classList.remove('active');
+    }
+
+    closeModal.addEventListener('click', closeAppModal);
+    
+    // Cerrar modal al hacer clic en overlay
+    appModal.querySelector('.modal-overlay').addEventListener('click', closeAppModal);
+
+    // Scroll al video para el botón Ver demo
+    demoBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const videoSection = document.querySelector('.video');
+        videoSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
